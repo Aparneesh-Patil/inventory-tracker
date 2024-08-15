@@ -88,7 +88,7 @@ export default function Home() {
       gap={2}
       marginBottom="2rem"
     >
-      <Typography variant="h1">Inventory Management</Typography>
+      <Typography variant="h1">Inventory Tracker</Typography>
       <Modal
         open={open}
         onClose={handleClose}
@@ -124,7 +124,7 @@ export default function Home() {
       <Button variant="contained" onClick={handleOpen}>
         Add New Item
       </Button>
-      <Box border={'1px solid #333'}>
+      <Box border={'1px solid #333'} >
         <Box
           width="800px"
           height="100px"
@@ -133,7 +133,7 @@ export default function Home() {
           justifyContent={'center'}
           alignItems={'center'}
         >
-          <Typography variant={'h2'} color={'#333'} textAlign={'center'}>
+          <Typography variant={'h2'} color={'#000000'} textAlign={'center'}>
             Inventory Items
           </Typography>
         </Box>
@@ -149,18 +149,23 @@ export default function Home() {
               bgcolor={'#f0f0f0'}
               paddingX={5}
             >
-              <Typography variant={'h4'} color={'#333'} textAlign={'center'}>
+              <Typography variant={'h5'} color={'#333'} textAlign={'center'}>
                 {name.charAt(0).toUpperCase() + name.slice(1)}
               </Typography>
-              <Typography variant={'h4'} color={'#333'} textAlign={'center'}>
-                Quantity: {quantity}
-              </Typography>
-              <Button sx={{color: '#00FF00', fontSize: '2rem'}} variant="text" onClick={() => addItem(name)}>
-                +
-              </Button>
-              <Button sx={{color: '#FF0000', fontSize: '2rem'}} variant="text" onClick={() => removeItem(name)}>
-                -
-              </Button>
+              <Typography variant={'h5'} color={'#333'} textAlign={'center'}>
+                  Quantity: {quantity}
+                </Typography>
+              <Box
+                justifyContent={'flex-end'}
+              >
+                <Button sx={{color: '#00FF00', fontSize: '2rem'}} variant="text" onClick={() => addItem(name)}>
+                  +
+                </Button>
+                <Button sx={{color: '#FF0000', fontSize: '2rem'}} variant="text" onClick={() => removeItem(name)}>
+                  -
+                </Button>
+              </Box>
+              
             </Box>
           ))}
         </Stack>
